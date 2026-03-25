@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Support · Help Center</title>
+<link href="https://fonts.googleapis.com/css2?family=Cabinet+Grotesk:wght@400;500;700;800&family=Literata:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+:root{
+  --ink:    #1a1a2e;
+  --ink2:   #2d2d4e;
+  --paper:  #f5f3ee;
+  --cream:  #ede9e0;
+  --line:   #d8d3c8;
+  --teal:   #00897b;
+  --teal2:  #00695c;
+  --amber:  #f59e0b;
+  --red:    #ef4444;
+  --muted:  #7c7a72;
+  --white:  #ffffff;
+  --r:      14px;
+  --head:   'Cabinet Grotesk', sans-serif;
+  --body:   'Literata', Georgia, serif;
+  --sans:   'Cabinet Grotesk', sans-serif;
+  --shadow: 0 2px 16px rgba(26,26,46,.10);
+}
+
+html,body{height:100%;overflow:hidden}
+body{
+  font-family:var(--body);
+  background:var(--paper);
+  color:var(--ink);
+  display:flex;
+  flex-direction:column;
+}
+
+/* ── HEADER ─────────────────────────────────────── */
+header{
+  display:flex;align-items:center;gap:14px;
+  padding:14px 24px;
+  background:var(--ink);
+  flex-shrink:0;
+}
+.brand{
+  display:flex;align-items:center;gap:10px;
+}
+.brand-mark{
+  width:36px;height:36px;border-radius:10px;
+  background:linear-gradient(135deg,var(--teal),#26c6da);
+  display:grid;place-items:center;
+  font-size:18px;flex-shrink:0;
+}
+.brand-name{
+  font-family:var(--head);font-size:16px;font-weight:800;
+  color:#fff;letter-spacing:-.3px;
+}
+.brand-sub{font-family:var(--sans);font-size:11px;color:#94a3b8;font-weight:400;}
+
+.atlas-badge{
+  margin-left:auto;
+  display:flex;align-items:center;gap:7px;
+  background:#0f2027;border:1px solid #1e3a4a;
+  border-radius:99px;padding:5px 14px;
+}
+.atlas-dot{width:7px;height:7px;border-radius:50%;background:#00e676;animation:blink 2s ease infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.atlas-label{font-family:var(--sans);font-size:11px;font-weight:600;color:#00e676;}
+.atlas-sub{font-family:var(--sans);font-size:10px;color:#4a6070;margin-left:-2px;}
+
+/* ── LAYOUT ─────────────────────────────────────── */
+.shell{flex:1;display:flex;overflow:hidden;}
+
+/* ── SIDEBAR ─────────────────────────────────────── */
+nav{
+  width:240px;flex-shrink:0;
+  background:var(--cream);
+  border-right:1px solid var(--line);
+  display:flex;flex-direction:column;
+  overflow:hidden;
+}
+.nav-head{
+  font-family:var(--sans);font-size:10px;font-weight:700;
+  letter-spacing:1.4px;text-transform:uppercase;
+  color:var(--muted);padding:20px 18px 10px;
+}
+.cat-group{padding:0 10px;flex:1;overflow-y:auto;}
+.cat-group::-webkit-scrollbar{width:3px;}
+.cat-group::-webkit-scrollbar-thumb{background:var(--line);}
+.cat-label{
+  font-family:var(--sans);font-size:10px;font-weight:700;
+  letter-spacing:1px;text-transform:uppercase;
+  color:var(--muted);padding:12px 8px 4px;
+}
+.faq-btn{
+  display:block;width:100%;text-align:left;
+  background:none;border:none;
+  font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink2);
+  padding:8px 10px;border-radius:8px;cursor:pointer;
+  transition:background .12s,color .12s;
+  line-height:1.4;
+}
+.faq-btn:hover{background:var(--line);color:var(--ink);}
+
+.nav-footer{
+  padding:14px 18px;border-top:1px solid var(--line);
+  font-family:var(--sans);font-size:11px;color:var(--muted);
+}
+.atlas-info{
+  display:flex;align-items:center;gap:6px;
+  background:#e8f5e9;border:1px solid #c8e6c9;
+  border-radius:8px;padding:6px 10px;
+  color:#2e7d32;font-size:11px;font-weight:600;
+}
+
+/* ── CHAT ────────────────────────────────────────── */
+.chat{flex:1;display:flex;flex-direction:column;overflow:hidden;}
+
+#feed{
+  flex:1;overflow-y:auto;
+  padding:28px 32px;
+  display:flex;flex-direction:column;gap:20px;
+  scroll-behavior:smooth;
+}
+#feed::-webkit-scrollbar{width:5px;}
+#feed::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px;}
+
+/* welcome */
+.welcome{
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;flex:1;text-align:center;gap:16px;
+  padding:40px 20px;
+}
+.welcome-icon{font-size:56px;animation:bob 3s ease-in-out infinite;}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.welcome h2{
+  font-family:var(--head);font-size:28px;font-weight:800;
+  color:var(--ink);letter-spacing:-.5px;
+}
+.welcome p{font-size:15px;color:var(--muted);max-width:360px;line-height:1.7;font-style:italic;}
+.chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:8px;max-width:440px;}
+.chip{
+  background:var(--white);border:1.5px solid var(--line);
+  border-radius:99px;padding:7px 16px;
+  font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink2);
+  cursor:pointer;transition:all .15s;
+}
+.chip:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-1px);}
+
+/* messages */
+.msg{display:flex;gap:12px;animation:rise .22s cubic-bezier(.34,1.56,.64,1);}
+@keyframes rise{from{opacity:0;transform:translateY(10px) scale(.97)}to{opacity:1;transform:none}}
+.msg.user{flex-direction:row-reverse;align-self:flex-end;max-width:72%;}
+.msg.bot{align-self:flex-start;max-width:82%;}
+
+.av{
+  width:34px;height:34px;border-radius:50%;
+  display:grid;place-items:center;font-size:16px;flex-shrink:0;
+}
+.msg.bot .av{background:linear-gradient(135deg,var(--teal),#26c6da);}
+.msg.user .av{background:var(--ink);color:#fff;font-size:13px;font-family:var(--sans);font-weight:700;}
+
+.bbl{
+  border-radius:var(--r);
+  padding:13px 17px;
+  font-size:14px;line-height:1.7;
+}
+.msg.user .bbl{
+  background:var(--ink);color:#e8eaf0;
+  border-bottom-right-radius:4px;
+  font-family:var(--sans);font-weight:400;
+}
+.msg.bot .bbl{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-bottom-left-radius:4px;
+  box-shadow:var(--shadow);
+}
+.bbl strong{color:var(--teal2);font-family:var(--sans);}
+.bbl code{
+  background:#f1f5f9;border-radius:4px;
+  padding:1px 5px;font-size:12px;color:var(--ink2);
+}
+
+/* category badge */
+.cat-badge{
+  display:inline-flex;align-items:center;gap:5px;
+  background:#e8f5e9;border-radius:99px;
+  padding:2px 10px;margin-bottom:8px;
+  font-family:var(--sans);font-size:11px;font-weight:600;color:var(--teal2);
+}
+
+/* feedback row */
+.feedback-row{
+  display:flex;align-items:center;gap:8px;
+  margin-top:10px;padding-top:10px;
+  border-top:1px solid var(--line);
+  font-family:var(--sans);font-size:11px;color:var(--muted);
+}
+.fb-btn{
+  background:none;border:1px solid var(--line);border-radius:6px;
+  padding:3px 10px;cursor:pointer;font-size:13px;
+  transition:all .12s;
+}
+.fb-btn:hover{border-color:var(--teal);transform:scale(1.1);}
+.fb-btn.voted{background:var(--cream);border-color:var(--teal);pointer-events:none;}
+
+/* typing */
+.typing-bbl{display:flex;gap:5px;padding:15px 18px;align-items:center;}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--teal);opacity:.35;animation:jump 1.2s ease-in-out infinite;}
+.dot:nth-child(2){animation-delay:.2s}.dot:nth-child(3){animation-delay:.4s}
+@keyframes jump{0%,80%,100%{transform:scale(.8);opacity:.35}40%{transform:scale(1.2);opacity:1}}
+
+/* meta */
+.msg-meta{
+  font-family:var(--sans);font-size:10px;color:var(--muted);
+  margin-top:4px;display:flex;align-items:center;gap:6px;
+}
+.msg.user .msg-meta{justify-content:flex-end;}
+.method-tag{
+  background:#f0fdf4;border:1px solid #bbf7d0;
+  border-radius:99px;padding:1px 7px;
+  color:#15803d;font-size:10px;
+}
+
+/* ── INPUT ───────────────────────────────────────── */
+.input-zone{
+  padding:16px 24px 20px;
+  background:var(--white);
+  border-top:1px solid var(--line);
+  flex-shrink:0;
+}
+.input-row{
+  display:flex;gap:10px;
+  background:var(--paper);
+  border:1.5px solid var(--line);
+  border-radius:12px;
+  padding:6px 6px 6px 16px;
+  transition:border-color .2s;
+}
+.input-row:focus-within{border-color:var(--teal);}
+#box{
+  flex:1;background:none;border:none;outline:none;
+  font-family:var(--sans);font-size:14px;color:var(--ink);
+  padding:8px 0;resize:none;
+}
+#box::placeholder{color:var(--muted);}
+#go{
+  width:40px;height:40px;flex-shrink:0;
+  background:var(--teal);border:none;border-radius:9px;
+  cursor:pointer;display:grid;place-items:center;
+  transition:background .15s,transform .1s;
+}
+#go:hover{background:var(--teal2);}
+#go:active{transform:scale(.93);}
+#go:disabled{background:var(--line);cursor:not-allowed;}
+#go svg{width:18px;height:18px;fill:#fff;}
+.hint{
+  font-family:var(--sans);font-size:11px;color:var(--muted);
+  text-align:center;margin-top:8px;
+}
+kbd{
+  background:var(--cream);border:1px solid var(--line);
+  border-radius:4px;padding:1px 6px;font-size:10px;
+}
+
+@media(max-width:640px){
+  nav{display:none;}
+  #feed{padding:16px;}
+  .msg.user,.msg.bot{max-width:96%;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="brand-mark">💬</div>
+    <div>
+      <div class="brand-name">Help Center</div>
+      <div class="brand-sub">Customer Support Assistant</div>
+    </div>
+  </div>
+  <div class="atlas-badge">
+    <div class="atlas-dot"></div>
+    <span class="atlas-label">MongoDB Atlas</span>
+    <span class="atlas-sub" id="faqCount">— FAQs</span>
+  </div>
+</header>
+
+<div class="shell">
+
+  <nav>
+    <div class="nav-head">Browse Topics</div>
+    <div class="cat-group" id="catGroup">
+      <div style="padding:20px 8px;color:var(--muted);font-family:var(--sans);font-size:12px;">Loading FAQs from Atlas…</div>
+    </div>
+    <div class="nav-footer">
+      <div class="atlas-info">🍃 &nbsp;Live data · MongoDB Atlas</div>
+    </div>
+  </nav>
+
+  <div class="chat">
+    <div id="feed">
+      <div class="welcome" id="welcome">
+        <div class="welcome-icon">🛟</div>
+        <h2>How can we help?</h2>
+        <p>Ask any question — I'll search our knowledge base stored in MongoDB Atlas and find the best answer instantly.</p>
+        <div class="chips" id="quickChips"></div>
+      </div>
+    </div>
+
+    <div class="input-zone">
+      <div class="input-row">
+        <textarea id="box" rows="1" placeholder="Ask a support question…" maxlength="500"></textarea>
+        <button id="go" title="Send">
+          <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+        </button>
+      </div>
+      <div class="hint">Press <kbd>Enter</kbd> to send &nbsp;·&nbsp; <kbd>Shift+Enter</kbd> for new line</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const API = '';   // same origin; change to http://localhost:3000 for local dev
+let SESSION = null;
+
+// ── Quick chips ────────────────────────────────────────────────
+const quickQ = [
+  '🔑 How do I reset my password?',
+  '💳 What payment methods do you accept?',
+  '📦 Where is my order?',
+  '↩️ How do I return a product?',
+  '💬 How do I contact support?',
+  '❌ How do I cancel my subscription?',
+];
+const chipsEl = document.getElementById('quickChips');
+quickQ.forEach(q => {
+  const b = document.createElement('button');
+  b.className = 'chip';
+  b.textContent = q;
+  b.addEventListener('click', () => send(q.replace(/^[^\s]+\s/, '')));
+  chipsEl.appendChild(b);
+});
+
+// ── Load FAQs into sidebar from Atlas ─────────────────────────
+async function loadFAQs() {
+  try {
+    const res  = await fetch(`${API}/api/faqs`);
+    const faqs = await res.json();
+
+    // Update badge
+    const statusRes = await fetch(`${API}/api/status`);
+    const status    = await statusRes.json();
+    document.getElementById('faqCount').textContent = `${status.faqCount} FAQs`;
+
+    // Group by category
+    const grouped = {};
+    faqs.forEach(f => { (grouped[f.category] = grouped[f.category] || []).push(f); });
+
+    const container = document.getElementById('catGroup');
+    container.innerHTML = '';
+    Object.entries(grouped).forEach(([cat, items]) => {
+      const lbl = document.createElement('div');
+      lbl.className = 'cat-label';
+      lbl.textContent = cat;
+      container.appendChild(lbl);
+      items.forEach(f => {
+        const btn = document.createElement('button');
+        btn.className = 'faq-btn';
+        btn.textContent = f.question;
+        btn.addEventListener('click', () => send(f.question));
+        container.appendChild(btn);
+      });
+    });
+  } catch {
+    document.getElementById('catGroup').innerHTML =
+      '<div style="padding:12px 8px;color:#e57373;font-family:var(--sans);font-size:12px;">⚠️ Could not reach the server.</div>';
+  }
+}
+loadFAQs();
+
+// ── Messaging ──────────────────────────────────────────────────
+const feed = document.getElementById('feed');
+const box  = document.getElementById('box');
+const goBtn= document.getElementById('go');
+
+function hideWelcome(){ const w=document.getElementById('welcome'); if(w) w.remove(); }
+
+function addMsg(text, role, meta={}){
+  hideWelcome();
+  const div = document.createElement('div');
+  div.className = `msg ${role}`;
+
+  const av = role==='user'
+    ? `<div class="av">You</div>`
+    : `<div class="av">🤖</div>`;
+
+  const formatted = text
+    .replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>')
+    .replace(/`([^`]+)`/g,'<code>$1</code>')
+    .replace(/\n/g,'<br>');
+
+  let inner = '';
+  if(role==='bot'){
+    const badge = meta.category && meta.category!=='Unmatched'
+      ? `<div class="cat-badge">📂 ${meta.category}</div>` : '';
+    const fb = meta.faqId
+      ? `<div class="feedback-row">
+           Was this helpful?
+           <button class="fb-btn" onclick="vote('${meta.faqId}',true,this)">👍</button>
+           <button class="fb-btn" onclick="vote('${meta.faqId}',false,this)">👎</button>
+         </div>` : '';
+    const methodTag = meta.method
+      ? `<span class="method-tag">🔍 ${meta.method}</span>` : '';
+    inner = `${av}<div>
+      <div class="bbl">${badge}${formatted}${fb}</div>
+      <div class="msg-meta">${methodTag}<span>${new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</span></div>
+    </div>`;
+  } else {
+    inner = `${av}<div>
+      <div class="bbl">${formatted}</div>
+      <div class="msg-meta"><span>${new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}</span></div>
+    </div>`;
+  }
+  div.innerHTML = inner;
+  feed.appendChild(div);
+  feed.scrollTop = feed.scrollHeight;
+}
+
+function addTyping(){
+  hideWelcome();
+  const div = document.createElement('div');
+  div.className = 'msg bot'; div.id = 'typing';
+  div.innerHTML = `<div class="av">🤖</div>
+    <div class="bbl typing-bbl"><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>`;
+  feed.appendChild(div);
+  feed.scrollTop = feed.scrollHeight;
+}
+
+async function send(text){
+  const msg = (text || box.value).trim();
+  if(!msg) return;
+  box.value = ''; box.style.height='auto';
+  goBtn.disabled = true;
+
+  addMsg(msg,'user');
+  addTyping();
+
+  try{
+    const res  = await fetch(`${API}/api/chat`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({ message: msg, sessionId: SESSION })
+    });
+    const data = await res.json();
+    document.getElementById('typing')?.remove();
+    SESSION = data.sessionId || SESSION;
+
+    if(data.error){ addMsg('⚠️ Server error: '+data.error,'bot'); }
+    else { addMsg(data.answer,'bot',{ category:data.category, faqId:data.faqId, method:data.method }); }
+  } catch(e){
+    document.getElementById('typing')?.remove();
+    addMsg('❌ Cannot reach the server. Make sure it\'s running and MONGO_URI is set in .env','bot');
+  } finally {
+    goBtn.disabled = false;
+    box.focus();
+  }
+}
+
+async function vote(faqId, helpful, btn){
+  btn.classList.add('voted');
+  btn.closest('.feedback-row').querySelectorAll('.fb-btn').forEach(b=>b.classList.add('voted'));
+  btn.textContent = helpful ? '👍 Thanks!' : '👎 Noted';
+  await fetch(`${API}/api/feedback`,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({ faqId, helpful })
+  }).catch(()=>{});
+}
+
+goBtn.addEventListener('click',()=>send());
+box.addEventListener('keydown', e=>{
+  if(e.key==='Enter'&&!e.shiftKey){ e.preventDefault(); send(); }
+});
+box.addEventListener('input',()=>{
+  box.style.height='auto';
+  box.style.height=Math.min(box.scrollHeight,120)+'px';
+});
+</script>
+</body>
+</html>
