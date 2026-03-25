@@ -242,7 +242,7 @@ app.post('/api/chat', async (req, res) => {
     // 👇 ADDED: 2. IF NOT IN MONGODB -> Ask Google Gemini AI! 👇
     else if (genAI) {
       try {
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash" });
         const prompt = `You are a helpful customer support and general knowledge assistant. A user asked: "${message.trim()}". Please provide a helpful, friendly, and concise answer.`;
         
         const aiResult = await model.generateContent(prompt);
